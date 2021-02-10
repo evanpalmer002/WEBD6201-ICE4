@@ -172,14 +172,6 @@
           }
         });
     }
-    function displayLogin()
-    {
-
-    }
-    function displayRegister()
-    {
-
-    }
 
     function displayContactList() 
     {
@@ -334,7 +326,7 @@
             break;
             break;   
             
-        }
+          
         
         
     }

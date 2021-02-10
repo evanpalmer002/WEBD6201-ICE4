@@ -130,7 +130,7 @@
         // form validation
         $("#emailAddress").on("blur", function()
         {
-          if(emailPattern.test($(this).val()))
+          if(fullNamePattern.test($(this).val()))
           {
             console.log("Passed!");
             messageArea.removeAttr("class").hide();
@@ -139,7 +139,7 @@
           {
             console.log("Failed!");
             $(this).trigger("focus").trigger("select");
-            messageArea.show().addClass("alert alert-danger").text("Please enter an appropriate Email Address");
+            messageArea.show().addClass("alert alert-danger").text("Please enter an appropriate Name. A first and last name is required(Minimum length of two characters each)!");
           }
 
         });
@@ -171,14 +171,6 @@
             }
           }
         });
-    }
-    function displayLogin()
-    {
-
-    }
-    function displayRegister()
-    {
-
     }
 
     function displayContactList() 
@@ -303,39 +295,25 @@
           case "Home":
               displayHome();
             break;
-          
-            case "About":
+          case "About":
               displayAbout();
             break;
-          
-            case "Projects":
+          case "Projects":
               displayProjects();
             break;
-          
-            case "Services":
+          case "Services":
               displayServices();
             break;
-          
-            case "Contact":
+          case "Contact":
               displayContact();
             break;
-          
-            case "Contact-List":
+          case "Contact-List":
             displayContactList();
-          
-            case "Edit":
+          case "Edit":
             displayEdit();
             break;
-            case "Login":
-            displayLogin();
-            break;
-            case "Register":
-            displayRegister();
-            break;
-            break;   
-            
+          break;
         }
-        
         
     }
 

@@ -172,14 +172,6 @@
           }
         });
     }
-    function displayLogin()
-    {
-
-    }
-    function displayRegister()
-    {
-
-    }
 
     function displayContactList() 
     {
@@ -303,39 +295,25 @@
           case "Home":
               displayHome();
             break;
-          
-            case "About":
+          case "About":
               displayAbout();
             break;
-          
-            case "Projects":
+          case "Projects":
               displayProjects();
             break;
-          
-            case "Services":
+          case "Services":
               displayServices();
             break;
-          
-            case "Contact":
+          case "Contact":
               displayContact();
             break;
-          
-            case "Contact-List":
+          case "Contact-List":
             displayContactList();
-          
-            case "Edit":
+          case "Edit":
             displayEdit();
             break;
-            case "Login":
-            displayLogin();
-            break;
-            case "Register":
-            displayRegister();
-            break;
-            break;   
-            
+          break;
         }
-        
         
     }
 

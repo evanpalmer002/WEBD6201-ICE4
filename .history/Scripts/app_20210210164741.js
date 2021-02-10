@@ -178,7 +178,7 @@
     }
     function displayRegister()
     {
-
+      
     }
 
     function displayContactList() 
@@ -334,7 +334,7 @@
             break;
             break;   
             
-        }
+          
         
         
     }

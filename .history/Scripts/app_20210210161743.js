@@ -74,7 +74,8 @@
     {
 
     }
-    function testFullName()
+
+    function displayContact()
     {
       let fullNamePattern = /^[A-Z][a-z]+(\s|,)[A-Z][a-z]{1,50}/;
       let messageArea = $("#messageArea").hide();
@@ -85,78 +86,24 @@
           if(fullNamePattern.test($(this).val()))
           {
             console.log("Passed!");
-            messageArea.removeAttr("class").hide();
           }
           else
           {
             console.log("Failed!");
             $(this).trigger("focus").trigger("select");
-            messageArea.show().addClass("alert alert-danger").text("Please enter an appropriate Name. A first and last name is required(Minimum length of two characters each)!");
+            messageArea.show().addClass("alert alert-danger").text("Please enter an appropriate Name");
           }
 
-        });
-    }
-
-    function testContactNumber()
-    {
-      let contactPattern = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/
-      ;
-      let messageArea = $("#messageArea").hide();
-
-        // form validation
-        $("#contactNumber").on("blur", function()
-        {
-          if(contactPattern.test($(this).val()))
+          if($(this).val().length < 2)
           {
-            console.log("Passed!");
-            messageArea.removeAttr("class").hide();
+            
           }
           else
           {
-            console.log("Failed!");
-            $(this).trigger("focus").trigger("select");
-            messageArea.show().addClass("alert alert-danger").text("Please enter an appropriate Number)!");
+              messageArea.removeAttr("class").hide();
           }
-
         });
 
-    }
-
-    function testEmailAddress()
-    {
-      let emailPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
-      let messageArea = $("#messageArea").hide();
-
-        // form validation
-        $("#emailAddress").on("blur", function()
-        {
-          if(emailPattern.test($(this).val()))
-          {
-            console.log("Passed!");
-            messageArea.removeAttr("class").hide();
-          }
-          else
-          {
-            console.log("Failed!");
-            $(this).trigger("focus").trigger("select");
-            messageArea.show().addClass("alert alert-danger").text("Please enter an appropriate Email Address");
-          }
-
-        });
-
-    }
-
-    function formValidation()
-    {
-      testFullName();
-      testContactNumber();
-      testEmailAddress();
-    }
-
-    function displayContact()
-    {
-     //Form validation
-     formValidation();
         $("#sendButton").on("click", (event)=> 
         {
           if($("#subscribeCheckbox")[0].checked)
@@ -171,14 +118,6 @@
             }
           }
         });
-    }
-    function displayLogin()
-    {
-
-    }
-    function displayRegister()
-    {
-
     }
 
     function displayContactList() 
@@ -235,8 +174,6 @@
     //TODO: Need Form Validation
     function displayEdit()
     {
-      let fullNamePattern = /^[A-Z][a-z]+(\s|,)[A-Z][a-z]{1,50}/;
-      let messageArea = $("#messageArea").hide();
       let key = location.hash.substring(1);
       let contact = new core.Contact();
 
@@ -261,7 +198,6 @@
         $("#editButton").html(`<i class="fas fa-plus-circle fa-lg"></i> Add`);
       }
 
-      formValidation();
       $("#editButton").on("click", function() 
       {
 
@@ -303,39 +239,25 @@
           case "Home":
               displayHome();
             break;
-          
-            case "About":
+          case "About":
               displayAbout();
             break;
-          
-            case "Projects":
+          case "Projects":
               displayProjects();
             break;
-          
-            case "Services":
+          case "Services":
               displayServices();
             break;
-          
-            case "Contact":
+          case "Contact":
               displayContact();
             break;
-          
-            case "Contact-List":
+          case "Contact-List":
             displayContactList();
-          
-            case "Edit":
+          case "Edit":
             displayEdit();
             break;
-            case "Login":
-            displayLogin();
-            break;
-            case "Register":
-            displayRegister();
-            break;
-            break;   
-            
+          break;
         }
-        
         
     }
 

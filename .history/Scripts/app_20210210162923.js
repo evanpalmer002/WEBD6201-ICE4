@@ -99,50 +99,13 @@
 
     function testContactNumber()
     {
-      let contactPattern = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/
-      ;
-      let messageArea = $("#messageArea").hide();
 
-        // form validation
-        $("#contactNumber").on("blur", function()
-        {
-          if(contactPattern.test($(this).val()))
-          {
-            console.log("Passed!");
-            messageArea.removeAttr("class").hide();
-          }
-          else
-          {
-            console.log("Failed!");
-            $(this).trigger("focus").trigger("select");
-            messageArea.show().addClass("alert alert-danger").text("Please enter an appropriate Number)!");
-          }
-
-        });
 
     }
 
     function testEmailAddress()
     {
-      let emailPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
-      let messageArea = $("#messageArea").hide();
 
-        // form validation
-        $("#emailAddress").on("blur", function()
-        {
-          if(emailPattern.test($(this).val()))
-          {
-            console.log("Passed!");
-            messageArea.removeAttr("class").hide();
-          }
-          else
-          {
-            console.log("Failed!");
-            $(this).trigger("focus").trigger("select");
-            messageArea.show().addClass("alert alert-danger").text("Please enter an appropriate Email Address");
-          }
-
-        });
 
     }
 
@@ -171,14 +134,6 @@
             }
           }
         });
-    }
-    function displayLogin()
-    {
-
-    }
-    function displayRegister()
-    {
-
     }
 
     function displayContactList() 
@@ -303,39 +258,25 @@
           case "Home":
               displayHome();
             break;
-          
-            case "About":
+          case "About":
               displayAbout();
             break;
-          
-            case "Projects":
+          case "Projects":
               displayProjects();
             break;
-          
-            case "Services":
+          case "Services":
               displayServices();
             break;
-          
-            case "Contact":
+          case "Contact":
               displayContact();
             break;
-          
-            case "Contact-List":
+          case "Contact-List":
             displayContactList();
-          
-            case "Edit":
+          case "Edit":
             displayEdit();
             break;
-            case "Login":
-            displayLogin();
-            break;
-            case "Register":
-            displayRegister();
-            break;
-            break;   
-            
+          break;
         }
-        
         
     }
 
